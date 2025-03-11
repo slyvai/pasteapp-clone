@@ -1,0 +1,35 @@
+.footer-container {
+  background-color: rgb(13, 13, 13);
+  color: white;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.footer-content h1 {
+ font-size: 18px;
+}
+
+.footer-content p {
+  font-size: 14px;
+  color: #FFFFFFB3;
+}
+
+.footer-line {
+  border-bottom: 1px solid #FFFFFFB3;
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.footer-copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  font-size: 14px;
+  color: #FFFFFFB3;
+}

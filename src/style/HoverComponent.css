@@ -1,0 +1,30 @@
+.hover-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hover-container img {
+  margin: 0;
+  width: 120px;
+  height: 300px;
+}
+
+.hover-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 20px;
+  font-size: 20px;
+}
+
+.hover-title-span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: linear-gradient(90deg, #ff7a18, #af002d, #84b7e7, #46bec7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
