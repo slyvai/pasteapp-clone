@@ -4,8 +4,13 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 50px;
   height: 50vw;
-  width: 89.6vw;
+  overflow: hidden;
 }
+
+.header-image-3 {
+  width: 70%;
+  height: auto;
+}
+
 
