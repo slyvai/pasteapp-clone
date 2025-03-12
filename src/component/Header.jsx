@@ -38,10 +38,10 @@ function Header () {
     <>
     <div className="header-container" style={{position: "relative"}}>
       <div className="header-1" ref={header1} style={{position: "absolute"}}>
-        <b>Your Workflow Amplified</b>
+        <b>Capek banget</b>
       </div>
       <div className="header-2" ref={header2} style={{position: "absolute"}}>
-        <b>Once Again</b>
+        <b>AAAAAAAAAAAAAA</b>
       </div>
       <div className="header-image-1" ref={image1} style={{position: "absolute"}}>
       <img src="https://framerusercontent.com/modules/c8mJrTPIqkx5l0MUgmyY/ezXUcutlEwTxfTpyBQxd/assets/JGv9jLVFG8n8Q8LmB1PFIpzbZo.png" alt="" />

@@ -1,9 +1,8 @@
   import { useEffect } from "react";
   import gsap from "gsap";
-  import { ScrollTrigger } from "gsap/all";
   import "../style/HoverComponent.css"
 
-  gsap.registerPlugin(ScrollTrigger);
+
 
   function HoverComponent() {
 
@@ -23,21 +22,7 @@
       "https://framerusercontent.com/images/oIWj5rD83R2smndIfKHeVdv5A.png?scale-down-to=512",
     ];
 
-    useEffect(() => {
-      const container = document.querySelector(".hover-parent-content")
-
-      gsap.fromTo(container, {y:0}, 
-        {y: 100, duration: 1, ease: "bounce.out"}, {
-          scrollTrigger: {
-            trigger: container,
-            start: "top top",
-            end: "bottom top",
-            scrub: true,
-          }
-        }
-      )
-    }, [])
-
+  
     useEffect(() => {
       const images = document.querySelectorAll(".hover-image");
 
