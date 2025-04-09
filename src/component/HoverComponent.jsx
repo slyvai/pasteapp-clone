@@ -1,8 +1,9 @@
-  import { useEffect } from "react";
+  import { useEffect} from "react";
   import gsap from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
   import "../style/HoverComponent.css"
 
-
+  gsap.registerPlugin(ScrollTrigger);
 
   function HoverComponent() {
 
@@ -46,8 +47,29 @@
       });
     }, []);
 
+    useEffect(() => {
+      const images = document.querySelectorAll(".hover-image");
+      images.forEach((image) => {
+        gsap.fromTo(image, { x: 1000, opacity: 0 }, {
+          scrollTrigger: {
+            trigger: '.hover-container',
+            start: "top 80%",
+            end: "bottom 20%",
+            scrub: true,
+            markers: false,
+          },
+          x: 0,
+          stagger: 0.5,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+        });
+      });
+    }, [])
+
   return (
     <>
+    <div className="hover-section" >
     <div className="hover-title">
         <h1>Fresh New Look <span className="hover-title-span">Elegance Infused With Efficiency</span></h1>
         <p>Every pixel has been refined and polished with care, resulting  <br />in a harmonious balance between aesthetics and usability.</p>
@@ -61,6 +83,7 @@
           className="hover-image"
         />
       ))}
+    </div>
     </div>
 
     <div className="content-container">

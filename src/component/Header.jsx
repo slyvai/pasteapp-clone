@@ -1,6 +1,10 @@
 import {useEffect, useRef} from "react";
 import "../style/Header.css"
+import "../style/LookNew.css"
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function Header () {
   const header1 = useRef(null);
@@ -8,6 +12,57 @@ function Header () {
   const image1 = useRef(null);
   const image2 = useRef(null);
   const image3 = useRef(null)
+  const containerRef = useRef(null);
+  const containerRef2 = useRef(null);
+  const containerRef3 = useRef(null);
+
+  useEffect(() => {
+   gsap.fromTo(containerRef.current, 
+    {transform: "perspective(1000px) rotateX(30deg)"}, 
+    {scrollTrigger: {
+      trigger: '.new-look-section',
+      start: "top 80%",
+      end: "bottom 20%",
+      scrub: true,
+      markers: false,
+    },
+    transform: "perspective(1000px) rotateX(0deg)",
+    duration: 1,
+    ease: "power2.out",
+   }
+   )
+
+    gsap.fromTo(containerRef2.current, { transform: "perspective(800px) rotateY(20deg)", scale: 0.8, x: -100}, {
+      scrollTrigger: {
+        trigger: '.new-look-section',
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: true,
+        markers: false,
+      },
+      transform: "perspective(800px) rotateX(0deg)",
+      x: 0,
+      scale: 1,
+      duration: 1,
+      ease: "power2.out",
+    })
+
+    gsap.fromTo(containerRef3.current, { transform: "perspective(800px) rotateY(-20deg)", scale: 0.8, x: 100}, {
+      scrollTrigger: {
+        trigger: '.new-look-section',
+        start: "top 80%",
+        end: "bottom 20%",
+        scrub: true,
+        markers: false,
+      },
+      transform: "perspective(800px) rotateX(0deg)",
+      x: 0,
+      scale: 1,
+      duration: 1,
+      ease: "power2.out",
+    })
+    }
+  , [])
 
 
   useEffect(() => {
@@ -30,7 +85,6 @@ function Header () {
     tl.set(image2.current, { scale: 5.5, y: 0, x: 0, opacity: 1, });
     tl.to(image2.current, {scale: 0.4, y: 0, y: 0, opacity:1, duration: 2 })
     tl.set(image3.current, {scale : 1.5, opacity:1})
-
     
   }, [])
 
@@ -38,10 +92,10 @@ function Header () {
     <>
     <div className="header-container" style={{position: "relative"}}>
       <div className="header-1" ref={header1} style={{position: "absolute"}}>
-        <b>Capek banget</b>
+        <b>Your Workflow Amplified</b>
       </div>
       <div className="header-2" ref={header2} style={{position: "absolute"}}>
-        <b>AAAAAAAAAAAAAA</b>
+        <b>Once Again</b>
       </div>
       <div className="header-image-1" ref={image1} style={{position: "absolute"}}>
       <img src="https://framerusercontent.com/modules/c8mJrTPIqkx5l0MUgmyY/ezXUcutlEwTxfTpyBQxd/assets/JGv9jLVFG8n8Q8LmB1PFIpzbZo.png" alt="" />
@@ -54,7 +108,30 @@ function Header () {
       <div className="header-image-3" ref={image3}>
         <img src="https://framerusercontent.com/images/DhDsfyks1iwAWu29uci5zpO8.jpg" alt="" />
       </div>
+      
     </div>
+
+    <div className="new-look-section" >
+      <div className="new-look-title">
+      <h1>New Look. New Feel. <br /> <span>All New Paste</span></h1>
+      <p>Discover unprecedented efficiency with our most advanced, intuitive, <br /> and user-centric update yet.</p>
+      </div>
+
+      <div className="new-look-image" >
+      <div className="device-image1" ref={containerRef2}>
+        <img src="https://framerusercontent.com/images/MFsNIGZmcW4MYnZCHCETuFIL9tc.png?scale-down-to=512" alt="" />
+        </div>
+
+        <div className="device-image2" ref={containerRef}>
+        <img src="https://framerusercontent.com/images/XhrkXBnHJaTWtrEjq133BhtBg.png?scale-down-to=712" alt="" />
+        </div>
+        
+        <div className="device-image3" ref={containerRef3}>
+        <img src="https://framerusercontent.com/images/5wZGXwxBjkqvElgRafMjIwVrAk.png?scale-down-to=512" alt="" />
+        </div>
+      </div>
+    </div>
+    
     </>
   )
 }
